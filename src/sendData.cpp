@@ -311,11 +311,10 @@ void dataSendHandler::send_to_brewers_friend() {
                 Serial.println(j.dump().c_str());
 #endif
 
-                url = "http://log.brewersfriend.com/stream/" + app_config.config["brewersFriendKey"].get<std::string>();
+                url = "http://log.brewfather.net/stream?id=" + app_config.config["brewersFriendKey"].get<std::string>();
 
                 http.begin(url.c_str());  //Specify destination for HTTP request
                 http.addHeader("Content-Type", "application/json");             //Specify content-type header
-                http.addHeader("X-API-KEY", app_config.config["brewersFriendKey"].get<std::string>().c_str());  //Specify API key header
                 int httpResponseCode = http.POST(j.dump().c_str());   //Send the actual POST request
 
                 if (httpResponseCode > 0) {
