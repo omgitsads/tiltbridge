@@ -20,7 +20,7 @@
 
 
 // Enable this for testing
-#define DEBUG_PRINTS 1
+//#define DEBUG_PRINTS 1
 
 
 #endif //TILTBRIDGE_TILTBRIDGE_H
